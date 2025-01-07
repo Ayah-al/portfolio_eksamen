@@ -1,0 +1,188 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f5f1;
+    font-family: "Anton", sans-serif;
+    overflow-x: hidden; 
+}
+p {
+    font-family: 'Baskerville', 'Times New Roman', serif;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.6;
+}
+/* Header */
+header {
+    width: 100%;
+    height: 70px;
+    background-color: #f6f5f1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.hamburger-icon {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001; 
+  }
+  .menu-overlay {
+    position: absolute;
+    top: 60px; 
+    right: 20px; 
+    width: 200px; 
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: none;
+  }
+  
+  .menu {
+    padding: 15px;
+  }
+  
+  .menu ul {
+    list-style-type: none;
+  }
+  
+  .menu ul li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .menu ul li a:hover {
+    background-color: #f6f5f1;
+  }
+/* Portfolio Image */
+.portfolio-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* Grundlæggende styling */
+main.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 10px;
+    padding: 20px;
+}
+
+.text-section {
+    grid-column: 1;
+}
+
+.link, .link1 {
+    grid-column: 2; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.link img, .link1 img {
+    width: 400px; 
+    height: 400px;
+    transition: transform 0.3s ease, filter 0.3s ease; 
+    margin-top: -400px
+}
+
+.link:hover, .link1:hover {
+    filter: brightness(1.1);
+}
+
+.webbilleder {
+    grid-column: 3; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -600px; 
+}
+.webbilleder img {
+    max-width: 100%;  /* Sikrer at billederne ikke går ud over deres container */
+    height: auto;  /* Bevarer billedernes oprindelige aspekt ratio */
+}
+
+
+
+footer.footer-bar {
+    flex-shrink: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 0.9rem;
+}
+
+.footer-bar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-bar a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+  main.content {
+      grid-template-columns: 1fr; 
+      gap: 10px; 
+      padding: 10px;
+  }
+
+  .text-section, .webbilleder, .link, .link1 {
+      grid-column: 1; 
+      margin: 0;
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center;
+      align-items: center;
+  }
+
+  .webbilleder {
+      margin-bottom: 20px; 
+  }
+
+  .link img, .link1 img {
+      width: 100%; 
+      height: 400px; 
+      margin: 0;
+  }
+
+  footer.footer-bar {
+      font-size: 0.8rem;
+      padding: 10px;
+  }
+}
